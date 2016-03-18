@@ -9,4 +9,5 @@ class IndexController extends \Mage\Core\Controller\Varien\Action{
     public function actionView(){
         var_dump($this->getRequest()->get('id'));
     }
+    
 }

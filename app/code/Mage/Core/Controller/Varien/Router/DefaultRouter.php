@@ -4,8 +4,11 @@ namespace Mage\Core\Controller\Varien\Router;
 class DefaultRouter extends \Mage\Core\Controller\Varien\Router\AbstractRouter{
     public function metch($request){
         $pathinfo = trim($request->pathinfo,'/');
+        if(empty($pathinfo)){
+            $pathinfo = 'cms/index/index';
+        }
         $p = explode('/',$pathinfo);
-
+        
         $moduleName = urldecode($p['0']);
         
         $controllerName = isset($p['1'])?urldecode($p['1']):'index';
